@@ -18,7 +18,7 @@ export default function App() {
   });
 
   const total = feedback.good + feedback.neutral + feedback.bad;
-  const positive = (feedback.good / total) * 100;
+  const positive = Math.round((feedback.good / total) * 100);
   const updateFeedback = (type) => {
     setFeedback({ ...feedback, [type]: feedback[type] + 1 });
   };
